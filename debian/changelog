@@ -1,5 +1,185 @@
-template-repository (1.0-1) unstable; urgency=medium
+rootlesskit (2.0.2-2) unstable; urgency=medium
 
-  * Initial release
+  * Team upload
+  * Upload changes from experimental to unstable
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Mathias Gibbens <gibmat@debian.org>  Fri, 26 Jul 2024 06:51:23 +0000
+
+rootlesskit (2.0.2-1) experimental; urgency=medium
+
+  * Team upload
+  * New upstream version 2.0.2
+
+ -- Reinhard Tartler <siretart@tauware.de>  Sun, 30 Jun 2024 20:05:32 -0400
+
+rootlesskit (1.1.1-1) unstable; urgency=medium
+
+  * New upstream release 1.1.1
+    + Remove duplicate id ranges returned by getsubu/gid for username/uid
+      (Closes: #1037119)
+  * Update Standards-Version to 4.6.2 (no changes)
+
+ -- Shengjing Zhu <zhsj@debian.org>  Sat, 29 Jul 2023 18:54:06 +0800
+
+rootlesskit (1.1.0-1) unstable; urgency=medium
+
+  * New upstream release 1.1.0
+  * Update Build-Depends
+    + Add golang-github-gotestyourself-gotest.tools-dev
+    + Remove golang-github-stretchr-testify-dev
+  * Install all docs
+
+ -- Shengjing Zhu <zhsj@debian.org>  Thu, 17 Nov 2022 01:32:06 +0800
+
+rootlesskit (1.0.1-1) unstable; urgency=medium
+
+  * New upstream release 1.0.1
+  * Update Standards-Version to 4.6.1 (no changes)
+
+ -- Shengjing Zhu <zhsj@debian.org>  Thu, 16 Jun 2022 23:46:10 +0800
+
+rootlesskit (1.0.0-1) unstable; urgency=medium
+
+  * New upstream release 1.0.0
+  * Add Multi-Arch hint
+
+ -- Shengjing Zhu <zhsj@debian.org>  Tue, 29 Mar 2022 02:41:47 +0800
+
+rootlesskit (0.14.6-2) unstable; urgency=medium
+
+  * Bump golang-github-urfave-cli-v2-dev to 2.3.0 (Closes: #1006701)
+
+ -- Shengjing Zhu <zhsj@debian.org>  Mon, 07 Mar 2022 23:28:22 +0800
+
+rootlesskit (0.14.6-1) unstable; urgency=medium
+
+  * New upstream release 0.14.6
+  * Remove golang-github-pkg-errors-dev from Depends
+  * Update Standards-Version to 4.6.0 (no changes)
+
+ -- Shengjing Zhu <zhsj@debian.org>  Mon, 07 Feb 2022 00:08:31 +0800
+
+rootlesskit (0.14.2-1) unstable; urgency=medium
+
+  * New upstream release 0.14.2
+    Fix slirp4netns port driver with Docker 20.10.6.
+
+ -- Shengjing Zhu <zhsj@debian.org>  Wed, 21 Apr 2021 01:42:50 +0800
+
+rootlesskit (0.14.1-1) unstable; urgency=medium
+
+  * New upstream release 0.14.1
+
+ -- Shengjing Zhu <zhsj@debian.org>  Tue, 30 Mar 2021 22:57:12 +0800
+
+rootlesskit (0.14.0-2) unstable; urgency=medium
+
+  * Add patch for urfave/cli 2.2.0 compatibility
+
+ -- Shengjing Zhu <zhsj@debian.org>  Tue, 16 Mar 2021 23:29:54 +0800
+
+rootlesskit (0.14.0-1) unstable; urgency=medium
+
+  * New upstream release 0.14.0
+
+ -- Shengjing Zhu <zhsj@debian.org>  Tue, 16 Mar 2021 23:07:35 +0800
+
+rootlesskit (0.13.2-1) unstable; urgency=medium
+
+  * New upstream release 0.13.2
+
+ -- Shengjing Zhu <zhsj@debian.org>  Tue, 23 Feb 2021 00:57:53 +0800
+
+rootlesskit (0.13.1-1) unstable; urgency=medium
+
+  * New upstream release 0.13.1
+
+ -- Shengjing Zhu <zhsj@debian.org>  Mon, 15 Feb 2021 20:51:03 +0800
+
+rootlesskit (0.13.0-1) unstable; urgency=medium
+
+  * New upstream release 0.13.0
+  * Update Section to golang and admin
+
+ -- Shengjing Zhu <zhsj@debian.org>  Tue, 02 Feb 2021 00:15:29 +0800
+
+rootlesskit (0.12.0-1) unstable; urgency=medium
+
+  * New upstream release 0.12.0
+  * Update Standards-Version to 4.5.1 (no changes)
+
+ -- Shengjing Zhu <zhsj@debian.org>  Fri, 22 Jan 2021 15:30:32 +0800
+
+rootlesskit (0.11.1+ds1-2) unstable; urgency=medium
+
+  * Add uidmap to Depends
+
+ -- Shengjing Zhu <zhsj@debian.org>  Fri, 13 Nov 2020 23:30:18 +0800
+
+rootlesskit (0.11.1+ds1-1) unstable; urgency=medium
+
+  * New upstream release 0.11.1
+
+ -- Shengjing Zhu <zhsj@debian.org>  Fri, 13 Nov 2020 23:06:33 +0800
+
+rootlesskit (0.11.0+ds1-1) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Database, Bug-Submit.
+
+  [ Shengjing Zhu ]
+  * Build with golang-github-urfave-cli-v2-dev
+  * Replace transitional package golang-logrus-dev
+  * Refresh patches
+
+ -- Shengjing Zhu <zhsj@debian.org>  Thu, 05 Nov 2020 22:46:55 +0800
+
+rootlesskit (0.10.1+ds1-1) unstable; urgency=medium
+
+  * New upstream release 0.10.1
+
+ -- Shengjing Zhu <zhsj@debian.org>  Wed, 16 Sep 2020 23:38:10 +0800
+
+rootlesskit (0.10.0+ds1-2) unstable; urgency=medium
+
+  * Change Architecture to linux-any
+  * Update default lxc-user-nic path patch.
+    Now it has correct value on both Debian and Ubuntu
+
+ -- Shengjing Zhu <zhsj@debian.org>  Wed, 29 Jul 2020 02:54:52 +0800
+
+rootlesskit (0.10.0+ds1-1) unstable; urgency=medium
+
+  * New upstream release v0.10.0
+
+ -- Shengjing Zhu <zhsj@debian.org>  Wed, 29 Jul 2020 00:42:28 +0800
+
+rootlesskit (0.9.5+ds1-2) unstable; urgency=medium
+
+  * Enable lxcusernic
+  * Fix default lxc-use-nic binary path
+  * Bump golang-github-pkg-errors-dev to 0.9.0
+  * Bump debhelper-compat to 13
+
+ -- Shengjing Zhu <zhsj@debian.org>  Sun, 12 Jul 2020 16:43:21 +0800
+
+rootlesskit (0.9.5+ds1-1) unstable; urgency=medium
+
+  * New upstream release v0.9.5
+  * Refresh patches for new version
+
+ -- Shengjing Zhu <zhsj@debian.org>  Tue, 16 Jun 2020 23:08:08 +0800
+
+rootlesskit (0.9.4+ds1-2) unstable; urgency=medium
+
+  * Add golang-github-rootless-containers-rootlesskit-dev.
+    Also provides the development package, it may be used by
+    libpod in the future.
+
+ -- Shengjing Zhu <zhsj@debian.org>  Fri, 01 May 2020 04:17:53 +0800
+
+rootlesskit (0.9.4+ds1-1) unstable; urgency=medium
+
+  * Initial release (Closes: 959204)
+
+ -- Shengjing Zhu <zhsj@debian.org>  Fri, 01 May 2020 02:14:37 +0800
