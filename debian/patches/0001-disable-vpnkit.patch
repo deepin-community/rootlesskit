@@ -1,0 +1,56 @@
+From: Shengjing Zhu <zhsj@debian.org>
+Date: Fri, 19 Jun 2020 16:56:13 +0800
+Subject: disable vpnkit
+
+---
+ cmd/rootlesskit/main.go      | 12 ++----------
+ pkg/network/vpnkit/vpnkit.go |  2 ++
+ 2 files changed, 4 insertions(+), 10 deletions(-)
+
+Index: rootlesskit/cmd/rootlesskit/main.go
+===================================================================
+--- rootlesskit.orig/cmd/rootlesskit/main.go
++++ rootlesskit/cmd/rootlesskit/main.go
+@@ -20,7 +20,6 @@ import (
+ 	"github.com/rootless-containers/rootlesskit/v2/pkg/network/lxcusernic"
+ 	"github.com/rootless-containers/rootlesskit/v2/pkg/network/pasta"
+ 	"github.com/rootless-containers/rootlesskit/v2/pkg/network/slirp4netns"
+-	"github.com/rootless-containers/rootlesskit/v2/pkg/network/vpnkit"
+ 	"github.com/rootless-containers/rootlesskit/v2/pkg/parent"
+ 	"github.com/rootless-containers/rootlesskit/v2/pkg/port/builtin"
+ 	"github.com/rootless-containers/rootlesskit/v2/pkg/port/portutil"
+@@ -471,14 +470,7 @@ func createParentOpt(clicontext *cli.Con
+ 			return opt, err
+ 		}
+ 	case "vpnkit":
+-		if ipnet != nil {
+-			return opt, errors.New("custom cidr is not supported for --net=vpnkit")
+-		}
+-		binary := clicontext.String("vpnkit-binary")
+-		if _, err := exec.LookPath(binary); err != nil {
+-			return opt, err
+-		}
+-		opt.NetworkDriver = vpnkit.NewParentDriver(binary, mtu, ifname, disableHostLoopback)
++		return opt, errors.New("not supported in this Debian package")
+ 	case "lxc-user-nic":
+ 		logrus.Warn("\"lxc-user-nic\" network driver is experimental")
+ 		if ipnet != nil {
+@@ -587,7 +579,7 @@ func createChildOpt(clicontext *cli.Cont
+ 	case "slirp4netns":
+ 		opt.NetworkDriver = slirp4netns.NewChildDriver()
+ 	case "vpnkit":
+-		opt.NetworkDriver = vpnkit.NewChildDriver()
++		return opt, errors.New("not supported in this Debian package")
+ 	case "lxc-user-nic":
+ 		opt.NetworkDriver = lxcusernic.NewChildDriver()
+ 	default:
+Index: rootlesskit/pkg/network/vpnkit/vpnkit.go
+===================================================================
+--- rootlesskit.orig/pkg/network/vpnkit/vpnkit.go
++++ rootlesskit/pkg/network/vpnkit/vpnkit.go
+@@ -1,3 +1,5 @@
++// +build ignore
++
+ package vpnkit
+ 
+ import (
